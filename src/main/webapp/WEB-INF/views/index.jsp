@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/css/test.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/test.css">
 </head>
 <body>
 	<h1>Index Page</h1>
