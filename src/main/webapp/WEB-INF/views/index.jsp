@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
