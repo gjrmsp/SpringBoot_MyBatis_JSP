@@ -1,21 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- jsp 페이지 선언부에 spring message를 사용 할 수 있도록 선언 -->
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
 	integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
 	crossorigin="anonymous">
-
 <title>Hello, world!</title>
 </head>
 <body>
@@ -32,7 +30,8 @@
 				<li class="nav-item active"><a class="nav-link" href="#">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a class="nav-link" href="/member/join">Join</a></li>
+				<li class="nav-item"><a class="nav-link" href="/member/join">Join</a>
+				</li>
 				<li class="nav-item"><a class="nav-link disabled" href="#"
 					tabindex="-1" aria-disabled="true">Disabled</a></li>
 			</ul>
@@ -43,7 +42,6 @@
 			</form>
 		</div>
 	</nav>
-
 	<div class="jumbotron jumbotron-fluid mt-3">
 		<div class="container">
 			<h1 class="display-4">Fluid jumbotron</h1>
@@ -51,16 +49,45 @@
 				entire horizontal space of its parent.</p>
 		</div>
 	</div>
+	<div class="container mt-2">
+		<h2 class="mt-4">Member Join Page</h2>
 
-   	<div class="container">
-   		<!-- spring:message code="properties의 key"  -->
-   		<!-- code(key) 가 없는 경우 기본메세지 출력 하는 text 속성 -->
-   		<h1><spring:message code="hello1234" text="default message"></spring:message> </h1>
-   		<h1><spring:message code="hello"></spring:message> </h1>
-   		<h1><spring:message code="board.notice.list.welcome"></spring:message> </h1>
-   		<h1><spring:message code="user.welcome" arguments="${user}, ${msg}" argumentSeparator=","></spring:message> </h1>
-   	</div>
-
+		<form id="frm" action="./join" method="post">
+			<div class="form-group">
+				<label for="id">ID</label> <input type="text" class="form-control"
+					id="id" name="username">
+				<h4 id="idResult"></h4>
+				<!-- ID 는 6글자 이상 -->
+			</div>
+			<div class="form-group">
+				<label for="pw">Password</label> <input type="password"
+					class="form-control" id="pw" name="password1">
+				<h4 id="pwResult"></h4>
+				<!-- PW는 8글자 이상 -->
+			</div>
+			<div class="form-group">
+				<label for="pw">Password</label> <input type="password"
+					class="form-control" id="pw2" name="password">
+				<!-- PW 두개는 일치 -->
+			</div>
+			<div class="form-group">
+				<label for="name">Name</label> <input type="text"
+					class="form-control etc" id="name" name="name">
+				<!-- 비어 있으면 X -->
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label> <input type="text"
+					class="form-control etc" id="email" name="email">
+				<!-- 비어 있으면 X -->
+			</div>
+			<div class="form-group">
+				<label for="phone">Phone</label> <input type="text"
+					class="form-control etc" id="phone" name="phone">
+				<!-- 비어 있으면 X -->
+			</div>
+			<input type="submit" id="btn" value="JOIN" class="btn btn-primary">
+		</form>
+	</div>
 	<footer class="footer mt-auto py-3 bg-dark">
 		<div class="container">
 			<span class="text-muted">Place sticky footer content here.</span>
@@ -74,6 +101,5 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
 		crossorigin="anonymous"></script>
-
 </body>
 </html>
