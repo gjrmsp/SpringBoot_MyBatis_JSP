@@ -14,9 +14,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 	
 	@GetMapping("/")
-	public String home(Model model) {
+	public String home(Model model) throws Exception {
 		model.addAttribute("message", "JSP Project");
+		model.addAttribute("user", "sana");
+		model.addAttribute("msg", "test");
 		return "index";
 	}
 
+	@GetMapping("/member/join")
+	public String test() throws Exception {
+		return "member/join";
+	}
 }
